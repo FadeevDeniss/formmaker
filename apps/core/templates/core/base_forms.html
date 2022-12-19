@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block header %}
+    <div id="hdr">
+        <h2>Forms</h2>
+    </div>
+{% endblock header %}
+
+{% block searchfield %}
+    <form id="formSearch">
+        <button id="btn-search" class="btnSearch btnSquare" type="submit" value="" >
+            <img id="btnIcon"
+                 src="https://img.icons8.com/external-inkubators-basic-outline-inkubators/64/null/external-search-dashboard-ui-inkubators-basic-outline-inkubators.png"/>
+        </button>
+        <input
+                id="field-search" class="fieldSearch"
+                value name="q" type="text" placeholder="Search"
+                formaction="." formmethod="get"/>
+        <div></div>
+    </form>
+{% endblock %}
+
+{% block content %}
+    <div class="main-wrapper white">
+        <div id="data">
+            {% for form in recent_forms %}
+                <div class="card">
+                    <div id="f-name" class="cardElem">
+                        <p>{{ form.name }}</p>
+                    </div>
+
+                    <div id="label" class="cardElem">created</div>
+                    <div id="created" class="cardElem"> {{ form.created|date }} </div>
+                </div>
+            {% empty %}
+                <div id="no-results" class="panel white">
+                    <p>No created forms</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

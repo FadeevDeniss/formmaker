@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com">
+    <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap"
+            rel="stylesheet">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap"
+            rel="stylesheet">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500;600&display=swap"
+            rel="stylesheet">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap"
+            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <title></title>
+
+    {% block stylesheets %}
+
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/base.css' %}">
+
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/buttons.css' %}">
+
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/fields.css' %}">
+
+    {% endblock stylesheets %}
+
+</head>
+<script src="{% static 'js/main.form.js' %}"></script>
+<body onload="onInit()">
+<div id="main-panel" class="panel">
+    {% block header %} {% endblock %}
+    {% block searchfield %} {% endblock  %}
+</div>
+<div class="panel">
+    <div id="sub-panel">
+        <p id="create">Create form</p>
+    </div>
+</div>
+
+<div class="main-wrapper">
+    <div class="btnGroup">
+        <button type="button" id="btnPlus" class="btnMain"></button>
+        <button type="button" class="btnMain"></button>
+        <button type="button" class="btnMain"></button>
+    </div>
+</div>
+<div class="panel white">
+    <div id="sub-panel">
+        <p id="recent">Recent forms</p>
+    </div>
+</div>
+{% block content %}{% endblock %}
+</body>
+</html>

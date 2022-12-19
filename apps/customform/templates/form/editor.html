@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+
+    <link
+            rel='preconnect' href='https://fonts.googleapis.com'>
+    <link
+            rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link
+            href='https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600&display=swap' rel='stylesheet'>
+    <link
+            href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap'
+            rel='stylesheet'>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600&display=swap" rel="stylesheet">
+
+    <meta name='viewport' content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+
+    <title></title>
+
+    {% block stylesheets %}
+
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/base.css' %}">
+
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'css/editor.css' %}">
+
+    {% endblock stylesheets %}
+</head>
+<script src="{% static 'js/editor.form.js' %}"></script>
+<body>
+
+<div id="header">
+    <div id="headerContent">
+        <div id="headerTitle">
+            New form
+        </div>
+
+        <div id="submitForm">
+            <button id='btn-send' type="submit">
+                <span id="btn-label">Send</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id='contentWrapper'>
+    <form id='form-main' action='.' method='post'>
+
+        {% csrf_token %}
+
+        <div id="fieldService">
+            {{ fieldset.management_form }}
+        </div>
+
+        <div id="answerService">
+            {{ answers.management_form }}
+        </div>
+
+        <div class="items">
+
+            <div id="main" class="item itemMain">
+
+                {% for m in form.visible_fields %}
+                    <div class="formTitle">
+                        {{ m }}
+                        <div class="border-bottom"></div>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            <div id="options">
+                <a class="addBtn" href="." >
+
+                    <svg id="svgPlus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.923 18.923"
+                         width="80%" height="80%">
+                        <circle cx="9.462" cy="9.462" r="8.462"
+                                style="fill:#fff;stroke:#656664;stroke-miterlimit:10;stroke-width:2px" />
+
+                        <line x1="9.462" y1="4.462" x2="9.462" y2="14.462"
+                              style="fill:none;stroke:#656664;stroke-miterlimit:10;stroke-width:2px" />
+
+                        <line x1="14.462" y1="9.462" x2="4.462" y2="9.462"
+                              style="fill:none;stroke:#656664;stroke-miterlimit:10;stroke-width:2px" />
+                    </svg>
+{#                    <object id="svgBtn" type="image/svg+xml" data="{% static 'media/plus.svg' %}" width="100%" height="80%">#}
+{#                    </object>#}
+
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="item formItem hidden">
+            <div class="field">
+                {% for x in fieldset %}
+                    {% for n in x.visible_fields %}
+                        {% if n.name == 'name' %}
+                            <div class="name">
+                                {{ n }}
+                                <div class="border-bottom ml-5"></div>
+                            </div>
+                            {% else %}
+                            <div class="fieldType">
+                                {{ n }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
+            <div class="answers">
+                {% for y in answers %}
+                        {% for k in y.visible_fields %}
+                            <div class="answer hidden">
+                                <div class="text">
+                                    {{ k }}
+                                    <div class="border-bottom ml-5"></div>
+                                </div>
+
+
+                                <div class="removeItem">
+                                    <a href='#' class='remove' ></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                <div class="add hidden">
+                    <a class="addAns" href="#main" >
+                        <p>Add answer</p>
+                    </a>
+                    <p> or <a class="addOther" href="">Add "Other"</a></p>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" id="copyBtn"></button>
+                <button type="button" id="delBtn"></button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

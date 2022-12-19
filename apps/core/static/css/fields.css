@@ -1,0 +1,49 @@
+/* BaseFieldModel for search on header */
+
+
+.fieldSearch {
+    display: flex;
+    flex: 1 2;
+    vertical-align: center;
+    font-size: 1.1rem;
+    height: auto;
+    max-width: 450px;
+    outline: none;
+    background: #EFF1F3FF;
+    border-radius: 0 15px 15px 0;
+    border: none;
+}
+
+.fieldSearch::placeholder {
+    font: 1.2rem 'Inter', sans-serif;
+    opacity: .5;
+}
+
+.fieldSearch::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+
+    height: 21px;
+    width: 21px;
+    margin-right: .4rem;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.white {
+    line-height: 15px;
+    font-size: .8rem;
+    height: auto;
+    width: auto;
+    background: white;
+}
+
+.fieldSearch:focus {
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+/*@media only screen and (max-width: 700px) {}*/
+

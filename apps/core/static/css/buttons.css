@@ -1,0 +1,207 @@
+/* Buttons*/
+
+.btnSearch {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    height: auto;
+    background-size: 14px;
+    background: #EFF1F3FF;
+    border: none;
+}
+
+.btnMain {
+    position: relative;
+    flex: 0 0 auto;
+    width: 180px;
+    height: 160px;
+    cursor: pointer;
+    border: 1px solid #b8b7b7;
+    border-radius: 5px;
+    background: #F9F9FAFF;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+    justify-content: space-around;
+    margin: 0;
+    max-width: 190px;
+    height: 200px;
+    border: .05rem solid #b8b7b7;
+    border-radius: 5px;
+    background: rgb(249, 249, 250);
+}
+
+.btnArrow {
+    display: flex;
+    margin: 7px;
+    align-self: center;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-top: 2px double #000;
+    border-right: 2px double #000;
+    transition: all .2s;
+    transition-delay: .1s;
+}
+
+.white {
+    background: white;
+}
+
+.btnArrow-l {
+    transform: rotate(-135deg);;
+}
+
+.btnRound {
+    border-radius: 50%;
+}
+
+.btnSquare {
+    border-radius: 15px 0 0 15px;
+}
+
+.btnGroup {
+    display: flex;
+    flex: 1 1;
+    justify-content: space-between;
+    max-width: 70%;
+    height: auto;
+}
+
+.cardElem {
+    display: flex;
+}
+
+#f-name {
+    width: 100%;
+    height: 60%;
+    padding-left: 5px;
+    align-items: center;
+    border-bottom: .05rem solid #b8b7b7;
+    border-radius: 8px 8px 0 0;
+    background-color: rgba(128, 0, 255, 0.09);
+}
+
+.cardElem > p {
+    font: normal 18px 'Maven Pro', sans-serif;
+    opacity: .7;
+}
+
+/*#name::after {*/
+/*    content: '';*/
+/*    width: 100%;*/
+/*    bottom: -30px;*/
+/*    position: absolute;*/
+/*    border-bottom: 1px solid rgba(149, 149, 149, 0.78);*/
+/*}*/
+
+#label {
+    padding: 10px 0 0 5px;
+    align-items: end;
+    height: 10%;
+    width: 100%;
+    opacity: .7;
+    font: 15px 'Maven Pro', sans-serif;
+    background-color: white;
+    border-top: .05rem solid rgba(149, 149, 149, 0.78);
+}
+
+#created {
+    padding-left: 5px;
+    align-items: start;
+    width: 100%;
+    height: 15%;
+    font: 14px 'Maven Pro', sans-serif;
+    opacity: .4;
+}
+
+#data {
+    display: flex;
+    flex: 1 1;
+    justify-content: space-between;
+    max-width: 70%;
+    height: auto;
+}
+
+#btnIcon {
+    display: flex;
+    margin: 5px;
+    justify-self: center;
+    align-self: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: all .4s;
+    transition-delay: .1s;
+}
+
+/* Animation for main plus button */
+
+.btnMain:hover {
+    border: none;
+    background: white;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+    border-color: #673ab7
+}
+
+#btnPlus.btnMain:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 7px;
+    width: 29%;
+    background: linear-gradient(to right, #4D148B 20%, #A8196F, rgb(216, 27, 96), #FF6F00);
+    top: 50%;
+    left: 50%;
+}
+
+#btnPlus.btnMain:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to bottom right, #4d148b 20%, #A8196F, #D81B60, #FF6F00);
+    height: 32%;
+    width: 7px;
+}
+
+/* Animation for search button */
+
+.btnSearch:hover > img {
+    border-radius: 100%;
+    margin: 5px;
+    background-color: rgba(148, 148, 148, 0.42);
+    height: 30px;
+    width: 30px;
+}
+
+.btnActive:active {
+    opacity: 0.6;
+}
+
+/* Animation for cancel button */
+
+#btn-search:hover > div {
+    margin: 2px;
+    width: 12px;
+    height: 12px;
+}
+
+@media only screen and (max-width: 700px) {
+    .btnGroup {
+        justify-content: center;
+    }
+
+    #data {
+        justify-content: center;
+    }
+}
+
+/*@media only screen and (min-width: 700px)*/

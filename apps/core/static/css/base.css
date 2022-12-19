@@ -1,0 +1,106 @@
+@media only screen and (max-width: 700px) {
+    #btnIcon,
+    #btn-search {}
+}
+
+
+.panel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #EFF1F3FF;
+}
+
+#sub-panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 70%;
+    height: 40px;
+    font: 1.1rem  bolder, 'Inter', sans-serif;
+    color: #2e2e2e;
+}
+
+#no-results {
+    display: flex;
+    padding: 10px;
+    justify-self: center;
+    font: 25px bold, 'Arimo', sans-serif;
+    opacity: .2;
+    width: 100%;
+}
+
+#create {
+    justify-self: start;
+    align-self: center;
+    opacity: .8;
+}
+
+#recent {
+    justify-self: start;
+    align-self: center;
+}
+
+#main-panel {
+    height: 80px;
+    background: #ffffff;
+}
+
+#hdr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0;
+    font: 20px 'Chakra Petch', sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    padding: 0 0 20px 0;
+    background-color: #EFF1F3FF;
+}
+
+
+#formSearch-c,
+#formSearch {
+    display: flex;
+    flex: 2 1;
+    align-self: center;
+    justify-self: center;
+}
+
+
+
+#formSearch-c:focus-within > button,
+#formSearch-c:focus-within > input,
+#formSearch:focus-within > button,
+#formSearch:focus-within > input {
+    background-color: white;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+/* Media settings */
+
+@media only screen and (max-width: 700px) {
+
+    .main-wrapper {
+        justify-content: space-around;
+    }
+
+    #main-panel {
+        justify-content: space-between;
+    }
+
+    #formSearch,
+    #formSearch-c {
+        flex: 0;
+    }
+
+    /*.main-menu {*/
+    /*    padding: 10px 0 20px 0;*/
+    /*}*/
+}
